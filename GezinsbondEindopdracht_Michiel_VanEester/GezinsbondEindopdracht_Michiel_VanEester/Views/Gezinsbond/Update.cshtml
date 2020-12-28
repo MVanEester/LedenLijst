@@ -1,0 +1,40 @@
+﻿@model MemberUpdateViewModel
+@{
+    Layout = "_Layout";
+}
+
+<form method="post" asp-controller="Gezinsbond" asp-action="Update">
+    <div class="form-group">
+        <label asp-for="MemberNumber">Lidkaartnummer (G-2020####)</label>
+        <input class="form-control" asp-for="MemberNumber">
+        <div class="invalid-feedback" style="display:block;">
+            <span asp-validation-for="MemberNumber"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ParentName">Naam ouder</label>
+        <input class="form-control" asp-for="ParentName">
+        <div class="invalid-feedback" style="display:block;">
+            <span asp-validation-for="ParentName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ChildName">Naam kind</label>
+        <input class="form-control" asp-for="ChildName">
+        <div class="invalid-feedback" style="display:block;">
+            <span asp-validation-for="ChildName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ExpiryYear">Vervaljaar</label>
+        <input class="form-control" asp-for="ExpiryYear">
+        <div class="invalid-feedback" style="display:block;">
+            <span asp-validation-for="ExpiryYear"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Type</label>
+        <select asp-for="Type" asp-items="@Html.GetEnumSelectList<MemberType>()"></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Aanpassen</button>
+</form>

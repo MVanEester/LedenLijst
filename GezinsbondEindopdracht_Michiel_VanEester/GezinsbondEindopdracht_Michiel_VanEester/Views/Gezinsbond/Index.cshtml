@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "_Layout";
+    var institurionName = @Configuration["InstitutionName"];
+    var institutionLogo = @Configuration["InstitutionLogo"];
+}
+
+<br />
+<div>
+    <span class="badge bg-secondary text-white">@ViewBag.TimeStampGenerated</span>
+</div>
+
+
+<img src="/images/@institutionLogo" alt="Gezinsbond logo" height="600" />
